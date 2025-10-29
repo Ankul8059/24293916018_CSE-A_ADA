@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+# Values of n and corresponding times (from your screenshot)
+n_values = [5, 10, 15, 20, 25, 30]
+time_taken = [0.002, 0.005, 0.003, 0.002, 0.012, 0.012]  # seconds
+
+plt.figure(figsize=(10, 6))
+plt.plot(n_values, time_taken, marker='o', linestyle='-', color='blue', label='DP Top-Down Fibonacci')
+
+plt.title('DP Top-Down Fibonacci Execution Time')
+plt.xlabel('n (Fibonacci Term)')
+plt.ylabel('Time Taken (seconds)')
+plt.xticks(n_values)
+plt.grid(True)
+plt.legend()
+plt.show()

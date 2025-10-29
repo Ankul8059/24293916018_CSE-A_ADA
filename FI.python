@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+# Data from your runs
+n_values = [5, 10, 15, 20, 25, 30]
+time_taken_sec = [0.002, 0.005, 0.009, 0.004, 0.014, 0.013]  # Time taken in seconds
+
+# Plotting
+plt.figure(figsize=(8, 5))
+plt.plot(n_values, time_taken_sec, marker='o', linestyle='-', color='b')
+plt.title('Iterative Fibonacci: n vs Time Taken')
+plt.xlabel('n (Number of Fibonacci Terms)')
+plt.ylabel('Time Taken (seconds)')
+plt.grid(True)
+plt.xticks(n_values)
+plt.show()

@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+
+# Data extracted from the provided image
+# The 'n' values are the inputs to the Fibonacci function
+n_values = [5, 10, 15, 20, 25, 30]
+
+# The 'time' values are the execution times in seconds
+# Note: The time for n=15 (0.003s) seems lower than n=10,
+# which may indicate measurement variance or a more complex relationship.
+time_values = [0.004000, 0.005000, 0.003000, 0.010000, 0.011000, 0.020000]
+
+# Create the plot
+# 'o-' creates a line plot with circle markers at each data point
+plt.plot(n_values, time_values, 'o-', color='teal', label='Time Taken')
+
+# Add labels and a title for clarity
+plt.title('Performance of Bottom-Up Fibonacci Calculation')
+plt.xlabel('Value of n')
+plt.ylabel('Time Taken (seconds)')
+
+# Add a grid for better readability
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# Add a legend to explain the line
+plt.legend()
+
+# Display the plot
+plt.show()

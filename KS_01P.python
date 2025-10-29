@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+
+# Data from your experiments
+items = [50, 100, 200, 400, 800, 1600]           # Number of items
+capacities = [100, 200, 400, 800, 1600, 3200]   # Corresponding knapsack capacities
+execution_time = [0.0001, 0.0003, 0.001, 0.0039, 0.0104, 0.0319]  # Average execution times in seconds
+
+# Space complexity in terms of n*W
+space_complexity = [n * W for n, W in zip(items, capacities)]
+
+# ----------------- Plotting -----------------
+fig, ax1 = plt.subplots(figsize=(10,6))
+
+# Plot execution time
+color = 'tab:blue'
+ax1.set_xlabel('Number of Items (n)')
+ax1.set_ylabel('Execution Time (seconds)', color=color)
+ax1.plot(items, execution_time, marker='o', color=color, label='Execution Time')
+ax1.tick_params(axis='y', labelcolor=color)
+ax1.set_title('0/1 Knapsack: Time & Space Complexity Analysis')
+ax1.grid(True, linestyle='--', alpha=0.5)
+
+# Create second y-axis for space complexity
+ax2 = ax1.twinx()
+color = 'tab:red'
+ax2.set_ylabel('Space Complexity (n*W)', color=color)
+ax2.plot(items, space_complexity, marker='s', linestyle='--', color=color, label='Space Complexity')
+ax2.tick_params(axis='y', labelcolor=color)
+
+# Add legends
+lines, labels = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines + lines2, labels + labels2, loc='upper left')
+
+plt.show()
